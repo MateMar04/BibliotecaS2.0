@@ -17,7 +17,7 @@ public class vRevistas extends JFrame {
 
     public vRevistas(Biblioteca biblioteca) {
         add(panel1);
-        setSize(500, 500);
+        setSize(800, 500);
 
         Vector comboBoxItems = new Vector();
         ArrayList<Revista> revistas = biblioteca.listarRevistas();

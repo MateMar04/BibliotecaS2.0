@@ -15,7 +15,7 @@ public class vBiblioteca extends JFrame {
     public vBiblioteca(Biblioteca biblioteca) {
         add(panel1);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(500, 500);
+        setSize(800, 500);
 
         dataLoad(biblioteca);
 
@@ -24,7 +24,8 @@ public class vBiblioteca extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
-                //vClientes vClientes = new vClientes(biblioteca);
+                vClientes vClientes = new vClientes(biblioteca);
+                vClientes.setVisible(true);
             }
         });
 
