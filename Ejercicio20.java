@@ -57,6 +57,6 @@ public class Ejercicio20 {
         System.out.println("Clientes con prestamos de libros: " + biblioteca.clientesConPrestamoLibro());
         System.out.println("Barrios con prestamos: " + biblioteca.barriosConPrestamos());
 
-
+        new vBiblioteca(biblioteca).setVisible(true);
     }
 }
