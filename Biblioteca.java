@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Biblioteca {
     private final String nombre;
@@ -88,5 +89,25 @@ public class Biblioteca {
             barrios.add(prestamo.getCliente().getDireccion().getBarrio());
         }
         return barrios;
+    }
+
+    public ArrayList<Libro> listarLibros() {
+        ArrayList<Libro> libros = new ArrayList<>();
+        for (Publicacion publicacion : listaPublicaciones) {
+            if (publicacion instanceof Libro) {
+                libros.add((Libro) publicacion);
+            }
+        }
+        return libros;
+    }
+
+    public ArrayList<Revista> listarRevistas() {
+        ArrayList<Revista> revistas = new ArrayList<>();
+        for (Publicacion publicacion : listaPublicaciones) {
+            if (publicacion instanceof Revista) {
+                revistas.add((Revista) publicacion);
+            }
+        }
+        return revistas;
     }
 }

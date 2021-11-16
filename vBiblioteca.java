@@ -17,10 +17,7 @@ public class vBiblioteca extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(500, 500);
 
-        cantClientes.setText(String.valueOf(biblioteca.cantidadClientes()));
-        cantLibros.setText(String.valueOf(biblioteca.cantidadLibros()));
-        cantPublicaciones.setText(String.valueOf(biblioteca.cantidadPublicaciones()));
-        cantRevistas.setText(String.valueOf(biblioteca.cantidadRevistas()));
+        dataLoad(biblioteca);
 
         clientesButton.addMouseListener(new MouseAdapter() {
             @Override
@@ -36,7 +33,8 @@ public class vBiblioteca extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
-                //vLibros vLibros = new vLibros(biblioteca);
+                vLibros vLibros = new vLibros(biblioteca);
+                vLibros.setVisible(true);
             }
         });
 
@@ -45,8 +43,16 @@ public class vBiblioteca extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
-                //vRevistas vRevistas = new vRevistas(biblioteca);
+                vRevistas vRevistas = new vRevistas(biblioteca);
+                vRevistas.setVisible(true);
             }
         });
+    }
+
+    private void dataLoad(Biblioteca biblioteca) {
+        cantClientes.setText(String.valueOf(biblioteca.cantidadClientes()));
+        cantLibros.setText(String.valueOf(biblioteca.cantidadLibros()));
+        cantPublicaciones.setText(String.valueOf(biblioteca.cantidadPublicaciones()));
+        cantRevistas.setText(String.valueOf(biblioteca.cantidadRevistas()));
     }
 }
